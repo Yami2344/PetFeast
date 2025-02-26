@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Dispensador de Alimento</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #218838;
+        }
+        .error {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form id="formularioLogin">
+            <input type="text" id="campoUsuario" placeholder="Usuario" required>
+            <input type="password" id="campoContraseña" placeholder="Contraseña" required>
+            <button type="submit">Ingresar</button>
+            <div id="mensajeError" class="error"></div>
+        </form>
+    </div>
+
+    <script>
+        // Elementos del formulario
+        const formularioLogin = document.getElementById('formularioLogin');
+        const campoUsuario = document.getElementById('campoUsuario');
+        const campoContraseña = document.getElementById('campoContraseña');
+        const mensajeError = document.getElementById('mensajeError');
+
+        formularioLogin.addEventListener('submit', function(evento) {
+            evento.preventDefault();
+
+            // Obtener los valores ingresados por el usuario
+            const usuario = campoUsuario.value;
+            const contraseña = campoContraseña.value;
+
+            // Validación básica (aquí podrías añadir validaciones más avanzadas o peticiones a un servidor)
+            if (usuario === 'admin' && contraseña === 'password') {
+                alert('Inicio de sesión exitoso');
+                // Redirigir a la página principal del dispensador de alimento
+                window.location.href = 'pagina_principal.html';
+            } else {
+                mensajeError.textContent = 'Usuario o contraseña incorrectos';
+            }
+        });
+    </script>
+</body>
+</html>

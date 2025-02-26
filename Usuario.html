@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Feast - Panel de Usuario</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Estilos personalizados -->
+  <style>
+    body {
+      background-color: #f0f0f0;
+      color: #333;
+    }
+    .header {
+      background-color: #3498db;
+      color: #fff;
+      padding: 15px;
+    }
+    .profile-section {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .meal-table {
+      margin-top: 20px;
+    }
+    .logout-btn {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <div class="header">
+    <div class="container">
+      <h1 class="display-4">Bienvenido, Saúl </h1>
+      <p>Mascota: Max </p>
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="container mt-4">
+    <div class="row">
+      <!-- Sección de perfil de la mascota -->
+      <div class="col-md-4">
+        <div class="profile-section">
+          <img src="assets/img/mascota max.jpg" class="img-fluid mb-3" alt="Foto de la Mascota">
+          <h3>Maximus, Max</h3>
+          <p>Detalles sobre la mascota: 
+            <br>
+            Edad: 1 año
+            <br> 
+            Raza: Jack Russell terrier
+            <br> 
+            Tamaño: Mediano
+            <br>
+            Peso: 7.45 kg
+            <br>
+            Condición especial: Ninguna
+        </p>
+        </div>
+      </div>
+
+      <!-- Tablas de registros de comidas -->
+      <div class="col-md-8">
+        <div class="meal-table">
+          <h2>Registros de Comidas</h2>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Porción (gr)</th>
+                <th>Tipo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>07/08/2024</td>
+                <td>07:00:00</td>
+                <td>450</td>
+                <td>Seco</td>
+              </tr>
+
+              <tr>
+                <td>07/08/2024</td>
+                <td>10:00:00</td>
+                <td>370</td>
+                <td>Seco</td>
+              </tr>
+
+              <tr>
+                <td>07/08/2024</td>
+                <td>17:00</td>
+                <td>379</td>
+                <td>Seco</td>
+              </tr>
+
+              <!-- Aquí van más filas según los registros -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Botón de cerrar sesión -->
+        <div class="logout-btn">
+          <a href="inicioSesion.html" class="btn btn-danger">Cerrar Sesión</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <footer class=" text-center" >Copyright &copy; Pet Feast 2024 | Todas las imagenes fueron creadas por herramientas de IA</div></footer>
+
+  <!-- Bootstrap JS y dependencias -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

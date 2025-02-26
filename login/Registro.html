@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('portadalogin.jpg'); /* Ruta de la imagen de fondo */
+            background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+            background-position: center; /* Centra la imagen en el fondo */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.3); /* Fondo semi-transparente */
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255);
+            width: 100%;
+            max-width: 400px;
+            margin: 40px 0;
+        }
+        .container h2, .container h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color:#fff
+        }
+        .container input[type="text"],
+        .container input[type="password"],
+        .container input[type="email"],
+        .container input[type="tel"],
+        .container input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: #0056b3;
+        }
+        .error-mensaje {
+            color: red;
+            text-align: center;
+        }
+        .alert {
+            color:#00b31e;
+            text-align: center;
+
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container" id="usuario-container">
+        <h2>Registro de Usuario</h2>
+        <form id="formularioUsuario">
+            <input type="text" id="inputNombre" placeholder="Nombre" required>
+            <input type="text" id="inputApellidoPaterno" placeholder="Apellido Paterno" required>
+            <input type="tel" id="inputTelefono" placeholder="Teléfono" required>
+            <input type="email" id="inputEmail" placeholder="Email" required>
+            <input type="password" id="inputContraseña" placeholder="Contraseña" required>
+            
+            <button type="submit">Registrar Usuario</button>
+            <div id="errorMensajeUsuario" class="error-mensaje"></div>
+        </form>
+    </div>
+
+    <div class="container" id="mascota-container">
+        <h2>Registro de Mascota</h2>
+        <form id="formularioMascota">
+            <input type="text" id="inputNombreMascota" placeholder="Nombre de la Mascota" required>
+            <input type="text" id="inputEspecieMascota" placeholder="Especie" required>
+            <input type="text" id="inputRazaMascota" placeholder="Raza" required>
+            <input type="number" id="inputEdadMascota" placeholder="Edad" required>
+            <input type="text" id="inputTamañoMascota" placeholder="Tamaño" required>
+            <input type="number" id="inputPesoMascota" placeholder="Peso (kg)" required>
+            <input type="text" id="inputCondicionEspecial" placeholder="Condición Especial">
+            
+            <button type="submit">Registrar Mascota</button>
+            <div id="errorMensajeMascota" class="error-mensaje"></div>
+        </form>
+    </div>
+
+    <script>
+        // Formularios de registro
+        const formularioUsuario = document.getElementById('formularioUsuario');
+        const formularioMascota = document.getElementById('formularioMascota');
+        
+        // Mensajes de error
+        const errorMensajeUsuario = document.getElementById('errorMensajeUsuario');
+        const errorMensajeMascota = document.getElementById('errorMensajeMascota');
+
+        formularioUsuario.addEventListener('submit', function(evento) {
+            evento.preventDefault();
+
+            // Generar clave única para el usuario
+            const claveUsuario = 'user_' + Date.now();
+
+            // Obtener los valores ingresados por el usuario
+            const nombreUsuario = document.getElementById('inputNombre').value;
+            const apellidoPaternoUsuario = document.getElementById('inputApellidoPaterno').value;
+            const telefonoUsuario = document.getElementById('inputTelefono').value;
+            const emailUsuario = document.getElementById('inputEmail').value;
+            const contraseñaUsuario = document.getElementById('inputContraseña').value;
+
+            // Mostrar las claves generadas (aquí podrías enviar los datos a un servidor)
+            console.log('Clave Usuario:', claveUsuario);
+            console.log('Nombre:', nombreUsuario);
+            console.log('Apellido Paterno:', apellidoPaternoUsuario);
+            console.log('Teléfono:', telefonoUsuario);
+            console.log('Email:', emailUsuario);
+            console.log('Contraseña:', contraseñaUsuario);
+
+            alert('Registro de usuario exitoso');
+        });
+
+        formularioMascota.addEventListener('submit', function(evento) {
+            evento.preventDefault();
+
+            // Generar clave única para la mascota
+            const claveMascota = 'pet_' + Date.now();
+
+            // Obtener los valores ingresados por la mascota
+            const nombreMascota = document.getElementById('inputNombreMascota').value;
+            const especieMascota = document.getElementById('inputEspecieMascota').value;
+            const razaMascota = document.getElementById('inputRazaMascota').value;
+            const edadMascota = document.getElementById('inputEdadMascota').value;
+            const tamañoMascota = document.getElementById('inputTamañoMascota').value;
+            const pesoMascota = document.getElementById('inputPesoMascota').value;
+            const condicionEspecialMascota = document.getElementById('inputCondicionEspecial').value;
+
+            // Mostrar las claves generadas (aquí podrías enviar los datos a un servidor)
+            console.log('Clave Mascota:', claveMascota);
+            console.log('Nombre Mascota:', nombreMascota);
+            console.log('Especie:', especieMascota);
+            console.log('Raza:', razaMascota);
+            console.log('Edad:', edadMascota);
+            console.log('Tamaño:', tamañoMascota);
+            console.log('Peso (kg):', pesoMascota);
+            console.log('Condición Especial:', condicionEspecialMascota);
+
+            alert('Registro de mascota exitoso');
+        });
+    </script>
+</body>
+</html>
