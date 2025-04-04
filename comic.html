@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcomic Carousel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="musica.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <div class="carousel-container">
+        <div class="carousel">
+            <img src="página 1.png" alt="Página 1">
+            <img src="página 2.png" alt="Página 2">
+            <img src="página 3.png" alt="Página 3">
+            <img src="página 4.png" alt="Página 4">
+            <img src="página 5.png" alt="Página 5">
+            <img src="página 6.png" alt="Página 6">
+        </div>
+
+        <!-- Puntos de navegación -->
+        <div class="dots-container">
+            <span class="dot" onclick="irAImagen(0)"></span>
+            <span class="dot" onclick="irAImagen(1)"></span>
+            <span class="dot" onclick="irAImagen(2)"></span>
+            <span class="dot" onclick="irAImagen(3)"></span>
+            <span class="dot" onclick="irAImagen(4)"></span>
+            <span class="dot" onclick="irAImagen(5)"></span>
+        </div>
+
+        <!-- Botones de desplazamiento -->
+        <div class="nav-buttons">
+            <button class="prev" onclick="avanzarCarrusel(-1)">&#10094;</button>
+            <button class="next" onclick="avanzarCarrusel(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const carousel = document.querySelector('.carousel');
+        const dots = document.querySelectorAll('.dot');
+        let index = 0;
+
+        function avanzarCarrusel(direction) {
+            index = (index + direction + carousel.children.length) % carousel.children.length;
+            actualizarCarrusel();
+        }
+
+        function irAImagen(i) {
+            index = i;
+            actualizarCarrusel();
+        }
+
+        function actualizarCarrusel() {
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+            // Actualizar puntos de navegación
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        setInterval(() => avanzarCarrusel(1), 9000); // Cambia cada 9 segundos
+        actualizarCarrusel(); // Iniciar con la primera imagen visible
+    </script>
+</body>
+</html>
